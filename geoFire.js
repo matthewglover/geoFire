@@ -451,7 +451,7 @@
         hash = srcHash,
         neighborPrefixes = [],
         matchesByPrefix = {},
-        matchesFiltered = [],
+        // matchesFiltered = [],
         distDict = {},
         i = 0;
 
@@ -484,7 +484,8 @@
         delete uniquesObj;
         
         var resultHandler = function(snapshot) {
-            var prefix = this.prefix;
+            var prefix = this.prefix,
+            matchesFiltered = [];
             matchesByPrefix[prefix] = [];
 
             // Compile the results for each of the queries as they return.
