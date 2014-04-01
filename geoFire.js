@@ -506,7 +506,10 @@
                             matchHash = match[0],
                             matchElt = match[1],
                             pointDist = distByHash(srcHash, matchHash);
-                        
+
+                        matchElt.geohash = matchHash;
+                        matchElt.distanceKm = pointDist;
+
                         if (pointDist <= radius) {
                             distDict[matchElt] = pointDist;
                             matchesFiltered.push(matchElt);
